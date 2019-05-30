@@ -40,20 +40,33 @@ export default class GameEngine implements lib_EventEmitter.Emitter {
     off: lib_EventEmitter.EmitterMethod;
     on: lib_EventEmitter.EmitterMethod;
     once: lib_EventEmitter.EmitterMethod;
-    
+    removeListener: lib_EventEmitter.EmitterMethod;
+
     /**
       * Create a game engine instance.  This needs to happen
       * once on the server, and once on each client.
       *
       * @param {GameEngineOptions} options - options object
       */
-     constructor(options: GameEngineOptions);
+    constructor(options: GameEngineOptions);
 
-     findLocalShadow(serverObj: object): object;
+    /** Client's player ID, as a number. If running on the client, this is set at runtime by the clientEngine */
+    playerId: number;
 
-     initWorld(worldSettings: GameWorldSettings): void;
+    findLocalShadow(serverObj: object): object;
 
-     /**
+    initWorld(worldSettings: GameWorldSettings): void;
+    /**
+        * The worldSettings defines the game world constants, such
+        * as width, height, depth, etc. such that all other classes
+        * can reference these values.
+        * @member {Object} worldSettings
+        * @memberof GameEngine
+        */
+    worldSettings: GameWorldSettings;
+    world: GameWorld;
+
+    /**
       * Start the game. This method runs on both server
       * and client. Extending the start method is useful
       * for setting up the game's worldSettings attribute,
