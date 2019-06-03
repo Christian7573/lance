@@ -21,4 +21,4 @@ export class GameWorld {
     getNewId(): number;
 }
 
-export default LanceGG.GameWorld;
+export default GameWorld;
