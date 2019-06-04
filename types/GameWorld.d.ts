@@ -17,7 +17,7 @@ export interface GameWorldQuery {
  * where all data pertaining to the current state of the
  * world is saved.
  */
-export class GameWorld {
+export default class GameWorld {
     stepCount: number;
     objects: object;
     playerCount: number;
