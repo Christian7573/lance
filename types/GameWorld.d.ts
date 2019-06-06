@@ -1,3 +1,4 @@
+import GameObject from "./serialize/GameObject";
 
 export interface GameWorldQuery {
     /** Object id */
@@ -70,5 +71,3 @@ export default class GameWorld {
      */
     forEachObject(callback: (number, GameObject) => any): void;
 }
-
-export default GameWorld;
