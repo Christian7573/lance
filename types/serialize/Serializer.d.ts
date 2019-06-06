@@ -34,4 +34,6 @@ export default class Serializer {
     readDataView(dataView, bufferOffset: number, netSchemProp): { data: any, bufferSize: number };
 
     getTypeByteSize(type: string): number;
+
+    static readonly netScheme: object;
 }
