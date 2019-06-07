@@ -1,6 +1,11 @@
 import Serializable from "./Serializable";
 import GameEngine from "../GameEngine";
 
+export interface GameObjectOptions {
+    /** Object ID */
+    id?: number;
+}
+
 /**
  * GameObject is the base class of all game objects.
  * It is created only for the purpose of clearly defining the game
@@ -17,7 +22,7 @@ export default class GameObject extends Serializable<GameObject> {
     * @param {Object} options - options for instantiation of the GameObject
     * @param {Number} id - if set, the new instantiated object will be set to this id instead of being generated a new one. Use with caution!
     */
-   constructor(gameEngine: GameEngine, options?: { id?: number });
+   constructor(gameEngine: GameEngine, options?: GameObjectOptions);
    gameEngine: GameEngine;
    /**
     * ID of this object's instance.
@@ -97,7 +102,7 @@ export default class GameObject extends Serializable<GameObject> {
      * This is used by the synchronizer to create temporary objects, and must be implemented by all sub-classes as well.
      * @param {GameObject} other the other object to synchronize to
      */
-    syncTo(other: GameObject);
+    syncTo<T extends GameObject>(other: T);
 
     /** copy physical attributes to physics sub-object */
     refreshToPhysics();
@@ -106,7 +111,7 @@ export default class GameObject extends Serializable<GameObject> {
     refreshFromPhysics();
 
     /** apply a single bending increment */
-    applyIncrementalBending() ;
+    applyIncrementalBending(...args: any[]): any ;
 
     /** clean up resources */
     destroy();
