@@ -1,5 +1,6 @@
 import Serializable from "./Serializable";
 import GameEngine from "../GameEngine";
+import GameComponent from "./GameComponent";
 
 export interface GameObjectOptions {
     /** Object ID */
@@ -102,7 +103,7 @@ export default class GameObject extends Serializable<GameObject> {
      * This is used by the synchronizer to create temporary objects, and must be implemented by all sub-classes as well.
      * @param {GameObject} other the other object to synchronize to
      */
-    syncTo<T extends GameObject>(other: T);
+    syncTo<T extends GameObject>(other: T, ...args: any[]);
 
     /** copy physical attributes to physics sub-object */
     refreshToPhysics();
@@ -124,7 +125,7 @@ export default class GameObject extends Serializable<GameObject> {
      * @param {Object} componentClass the comp
      * @return {Boolean} true if the gameObject contains this component
      */
-    hasComponent<T extends GameComponent>(componentClass: typeof T.constructor): boolean;
+    hasComponent<T extends GameComponent>(componentClass: { new (gameEngine: GameEngine, options?: GameObjectOptions): T }): boolean;
 
-    getComponent<T extends GameComponent>(componentClass: typeof T.constructor): GameComponent;
+    getComponent<T extends GameComponent>(componentClass: { new (gameEngine: GameEngine, options?: GameObjectOptions): T }): GameComponent;
 }
