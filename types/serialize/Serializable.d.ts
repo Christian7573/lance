@@ -9,7 +9,7 @@ export interface SerializationOptions {
     dry?: boolean
 }
 
-export default class Serializable<T> {
+export default class Serializable {
      /**
      *  Class can be serialized using either:
      * - a class based netScheme
@@ -20,10 +20,10 @@ export default class Serializable<T> {
      * @param {SerializationOptions} [options] - Options object
      * @return {T} the serialized object.  Contains attributes: dataBuffer - buffer which contains the serialized data;  bufferOffset - offset where the serialized data starts.
      */
-    serialize(serializer: Serializer, options: SerializationOptions): T;
+    serialize(serializer: Serializer, options: SerializationOptions): Serializable;
 
     /** build a clone of this object with pruned strings (if necessary) */
-    prunedStringsClone(serializer: Serializer , prevObject: T): T
+    prunedStringsClone(serializer: Serializer , prevObject: Serializable): Serializable
 
-    syncTo(other: T);
+    syncTo(other: Serializable);
 }
