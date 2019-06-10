@@ -63,6 +63,7 @@
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/preset-env": "^7.3.1",
     "@babel/register": "^7.0.0",
+    "@types/cannon": "^0.1.4",
     "@types/event-emitter": "^0.3.3",
     "@types/p2": "^0.7.32",
     "@types/socket.io": "^2.1.2",
