@@ -1,11 +1,11 @@
 import { DynamicObject } from "../../package/clientExports";
 
-declare interface typeof_hshg {
+export interface typeof_hshg {
     new (): instanceof_hshg;
     update_RECOMPUTE: () => void;
     update_REMOVEALL: () => void;
 }
-declare interface instanceof_hshg {
+export interface instanceof_hshg {
     addObject(obj: DynamicObject): void;
     removeObject(obj: DynamicObject): void;
     update(): void;

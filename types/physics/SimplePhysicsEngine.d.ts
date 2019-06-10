@@ -1,6 +1,6 @@
 import PhysicsEngine, { PhysicsEngineOptions } from "./PhysicsEngine";
 import TwoVector from "../serialize/TwoVector";
-import { DynamicObject } from "../package/clientExports";
+import { DynamicObject, GameEngine } from "../package/clientExports";
 
 export interface SimplePhysicsCollisionOptions {
     /** Can be set to "HSHG" or "bruteForce". Default is Brute-Force collision detection. */
@@ -36,7 +36,7 @@ export default class SimplePhysicsEngine extends PhysicsEngine {
     /** Gravity affecting all objects */
     gravity: TwoVector;
 
-    collisionDetection: CollisionDetection;
+    collisionDetection: SimpleCollisionDetection;
 
     /** A single object advances, based on:
       * isRotatingRight, isRotatingLeft, isAccelerating, current velocity
@@ -44,4 +44,12 @@ export default class SimplePhysicsEngine extends PhysicsEngine {
     objectStep(o: DynamicObject, dt: number);
 
     step(dt: number, objectFilter: Function);
+}
+
+export interface SimpleCollisionInitOptions {
+    gameEngine: GameEngine;
+}
+export interface SimpleCollisionDetection {
+    init(options: SimpleCollisionInitOptions);
+    detect(): void;
 }
