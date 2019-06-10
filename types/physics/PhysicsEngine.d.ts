@@ -1,7 +1,7 @@
 import GameEngine from "../GameEngine";
 
 export interface PhysicsEngineOptions {
-    gameEngine: GameEngine;
+    gameEngine?: GameEngine;
 }
 
 /** The base Physics Engine class defines the expected interface
