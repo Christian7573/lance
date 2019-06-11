@@ -1,6 +1,6 @@
 import GameEngine from "../../GameEngine";
 import { instanceof_hshg } from "./HSHG";
-import { DynamicObject } from "../../package/clientExports";
+import DynamicObject from "../../serialize/DynamicObject";
 import { SimpleCollisionDetection, SimpleCollisionInitOptions } from "../SimplePhysicsEngine";
 
 export interface HSHGCollisionDetectionOptions {

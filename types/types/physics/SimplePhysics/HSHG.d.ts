@@ -1,4 +1,4 @@
-import { DynamicObject } from "../../package/clientExports";
+import DynamicObject from "../../serialize/DynamicObject";
 
 export interface typeof_hshg {
     new (): instanceof_hshg;

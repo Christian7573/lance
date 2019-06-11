@@ -1,6 +1,7 @@
 import PhysicsEngine, { PhysicsEngineOptions } from "./PhysicsEngine";
 import TwoVector from "../serialize/TwoVector";
-import { DynamicObject, GameEngine } from "../package/clientExports";
+import DynamicObject from "../serialize/DynamicObject";
+import GameEngine from "../GameEngine";
 
 export interface SimplePhysicsCollisionOptions {
     /** Can be set to "HSHG" or "bruteForce". Default is Brute-Force collision detection. */
