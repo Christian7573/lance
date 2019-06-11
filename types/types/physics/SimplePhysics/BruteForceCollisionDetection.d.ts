@@ -1,5 +1,5 @@
 import GameEngine from "../../GameEngine";
-import { DynamicObject } from "../../package/clientExports";
+import DynamicObject from "../../serialize/DynamicObject";
 import { SimpleCollisionDetection, SimpleCollisionInitOptions } from "../SimplePhysicsEngine";
 
 export interface BruteForceCollisionDetectionOptions {

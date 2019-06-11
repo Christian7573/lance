@@ -50,3 +50,6 @@ export interface BaseTypesInterface {
    * Seriablizable list. */
   LIST: 'LIST';
 }
+
+declare const BaseTypes;
+export { BaseTypes as default };

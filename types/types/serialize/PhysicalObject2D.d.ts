@@ -1,6 +1,6 @@
 import GameObject, { GameObjectOptions } from "./GameObject";
 import GameEngine from "../GameEngine";
-import { TwoVector } from "../package/clientExports";
+import TwoVector from "./TwoVector";
 
 export interface PhysicalObject2DProps {
     /** Position vector */

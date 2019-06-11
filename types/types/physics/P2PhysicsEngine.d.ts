@@ -1,5 +1,5 @@
 import PhysicsEngine from "./PhysicsEngine";
-import { DynamicObject } from "../package/clientExports";
+import DynamicObject from "../serialize/DynamicObject";
 import * as p2 from "p2";
 
 /**
