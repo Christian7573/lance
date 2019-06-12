@@ -8,11 +8,11 @@ export interface PhysicalObject2DProps {
     /** Velocity vector */
     velocity?: TwoVector;
     /** Angle */
-    angle: number;
+    angle?: number;
     /** Mass */
-    mass: number;
+    mass?: number;
     /** Angular velocity */
-    angularVelocity: number;
+    angularVelocity?: number;
 }
 
 /**

@@ -5,13 +5,13 @@ import Quaternion from "./Quaternion";
 
 export interface PhysicalObject3DProps {
    /** Position vector */
-   position: ThreeVector;
+   position?: ThreeVector;
    /** Velocity vector */
-   velocity: ThreeVector;
+   velocity?: ThreeVector;
    /** Quaternion */
-   quaternion: Quaternion;
+   quaternion?: Quaternion;
    /** 3-vector representation of angular velocity */
-   angularVelocity: ThreeVector;
+   angularVelocity?: ThreeVector;
 }
 
 /**
