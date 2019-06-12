@@ -2,6 +2,7 @@ import lib_EventEmitter = require("event-emitter");
 import GameWorld from "./GameWorld";
 import GameObject from "./serialize/GameObject";
 import Serializer from "./serialize/Serializer";
+import PhysicsEngine from "./physics/PhysicsEngine";
 
 export interface GameEngineOptions {
     /** The trace level from 0 to 5.  Lower value traces more. */
@@ -52,6 +53,8 @@ export default class GameEngine implements lib_EventEmitter.Emitter {
       * @param {GameEngineOptions} options - options object
       */
     constructor(options: GameEngineOptions);
+    options: GameEngineOptions;
+    physicsEngine: PhysicsEngine;
 
     /** Client's player ID, as a number. If running on the client, this is set at runtime by the clientEngine */
     playerId: number;
