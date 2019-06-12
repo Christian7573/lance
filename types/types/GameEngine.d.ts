@@ -1,4 +1,7 @@
 import lib_EventEmitter = require("event-emitter");
+import GameWorld from "./GameWorld";
+import GameObject from "./serialize/GameObject";
+import Serializer from "./serialize/Serializer";
 
 export interface GameEngineOptions {
     /** The trace level from 0 to 5.  Lower value traces more. */
@@ -55,7 +58,7 @@ export default class GameEngine implements lib_EventEmitter.Emitter {
 
     findLocalShadow(serverObj: object): object;
 
-    initWorld(worldSettings: GameWorldSettings): void;
+    initWorld(worldSettings: object): void;
     /**
         * The worldSettings defines the game world constants, such
         * as width, height, depth, etc. such that all other classes
@@ -63,7 +66,7 @@ export default class GameEngine implements lib_EventEmitter.Emitter {
         * @member {Object} worldSettings
         * @memberof GameEngine
         */
-    worldSettings: GameWorldSettings;
+    worldSettings: object;
     world: GameWorld;
 
     /**

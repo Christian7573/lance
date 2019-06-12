@@ -1,5 +1,9 @@
 /// <reference types="socket.io" />
 import GameEngine from "./GameEngine";
+import Serializer from "./serialize/Serializer";
+import NetworkTransmitter from "./network/NetworkTransmitter";
+import NetworkMonitor from "./network/NetworkMonitor";
+import Scheduler from "./lib/Scheduler";
 
 export interface ServerEngineOptions {
     /** Number of steps per second */

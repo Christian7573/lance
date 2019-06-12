@@ -1,6 +1,7 @@
 ///<reference types="socket.io-client" />
 
 import GameEngine from "./GameEngine";
+import Renderer from "./render/Renderer";
 
 export type ClientEngineScheduleMode = "render-schedule" | "fixed";
 export type ClientEngineSyncMode = "interpolate" | "extrapolate" | "frameSync";
