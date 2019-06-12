@@ -6,11 +6,11 @@ export interface GameWorldQuery {
     /** Player id */
     playerId?: number;
     /** Instance type */
-    instanceType: { new (...args): any }
+    instanceType?: { new (...args): any }
     /** An array of component names */
-    componentNames: string[];
+    componentNames?: string[];
     /** Only return a single object. Default: false */
-    returnSingle: boolean;
+    returnSingle?: boolean;
 }
 
 /**
