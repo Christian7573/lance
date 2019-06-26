@@ -5,7 +5,7 @@ import http from 'http';
  * Measures network performance between the client and the server
  * Represents both the client and server portions of NetworkMonitor
  */
-export default class NetworkMonitor {
+class NetworkMonitor {
 
     constructor(server) {
 
@@ -70,3 +70,5 @@ export default class NetworkMonitor {
     }
 
 }
+
+export { NetworkMonitor as default };
