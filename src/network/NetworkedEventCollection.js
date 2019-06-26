@@ -4,7 +4,7 @@ import Serializable from '../serialize/Serializable';
 /**
  * Defines a collection of NetworkEvents to be transmitted over the wire
  */
-export default class NetworkedEventCollection extends Serializable {
+class NetworkedEventCollection extends Serializable {
 
     static get netScheme() {
         return {
@@ -21,3 +21,5 @@ export default class NetworkedEventCollection extends Serializable {
     }
 
 }
+
+export { NetworkedEventCollection as default }

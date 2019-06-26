@@ -8,15 +8,15 @@ const LOOP_SLOW_COUNT = 10;
  * Scheduler class
  *
  */
-export default class Scheduler {
+class Scheduler {
 
     /**
      * schedule a function to be called
      *
-     * @param {Object} options the options
+     * @param {object} options the options
      * @param {Function} options.tick the function to be called
-     * @param {Number} options.period number of milliseconds between each invocation, not including the function's execution time
-     * @param {Number} options.delay number of milliseconds to add when delaying or hurrying the execution
+     * @param {number} options.period number of milliseconds between each invocation, not including the function's execution time
+     * @param {number} options.delay number of milliseconds to add when delaying or hurrying the execution
      */
     constructor(options) {
         this.options = Object.assign({
@@ -96,3 +96,5 @@ export default class Scheduler {
         this.requestedDelay -= this.options.delay;
     }
 }
+
+export { Scheduler as default }
