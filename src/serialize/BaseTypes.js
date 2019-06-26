@@ -20,7 +20,8 @@
 class BaseTypes {}
 
 /**
- * @type {object}
+ * @memberof BaseTypes
+ * @static
  * @property {string} FLOAT32 Seriablizable float
  * @property {string} INT32 Seriablizable 32-bit integer
  * @property {string} INT16 Seriablizable 16-bit integer
@@ -31,61 +32,20 @@ class BaseTypes {}
  * @property {string} LIST Seriablizable list.  In the netScheme definition, if an attribute is defined as a list, the itemType should also be defined.
  */
 BaseTypes.TYPES = {
-
-  /**
-   * Seriablizable float
-   * @alias TYPES.FLOAT32
-   * @memberof! BaseTypes#
-   */
     FLOAT32: 'FLOAT32',
 
-    /**
-     * Seriablizable 32-bit int
-     * @alias TYPES.INT32
-     * @memberof! BaseTypes#
-     */
     INT32: 'INT32',
 
-    /**
-     * Seriablizable 16-bit int
-     * @alias TYPES.INT16
-     * @memberof! BaseTypes#
-     */
     INT16: 'INT16',
 
-    /**
-     * Seriablizable 8-bit int
-     * @alias TYPES.INT8
-     * @memberof! BaseTypes#
-     */
     INT8: 'INT8',
 
-    /**
-     * Seriablizable unsigned 8-bit int
-     * @alias TYPES.UINT8
-     * @memberof! BaseTypes#
-     */
     UINT8: 'UINT8',
 
-    /**
-     * Seriablizable string
-     * @alias TYPES.STRING
-     * @memberof! BaseTypes#
-     */
     STRING: 'STRING',
 
-    /**
-     * Seriablizable class.  Make sure you registered the classes included in this way.
-     * @alias TYPES.CLASSINSTANCE
-     * @memberof! BaseTypes#
-     */
     CLASSINSTANCE: 'CLASSINSTANCE',
-
-    /**
-     * Seriablizable list.
-     * @alias TYPES.LIST
-     * @memberof! BaseTypes#
-     */
+    
     LIST: 'LIST'
 };
 

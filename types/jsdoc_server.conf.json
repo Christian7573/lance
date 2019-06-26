@@ -2,7 +2,8 @@
     "source": {
         "include": [
             "src"
-        ]
+        ],
+        "excludePattern": "(node_modules|dist|test)"
     },
     "opts": {
         "recurse": true,
