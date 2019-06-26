@@ -1,7 +1,8 @@
 import HSHG from './HSHG';
 
-// Collision detection based on Hierarchical Spatial Hash Grid
-// uses this implementation https://gist.github.com/kirbysayshi/1760774
+/** * Collision detection based on Hierarchical Spatial Hash Grid
+  * uses this implementation https://gist.github.com/kirbysayshi/1760774
+  */
 class HSHGCollisionDetection {
 
     constructor(options) {
@@ -56,8 +57,8 @@ class HSHGCollisionDetection {
 
     /**
      * checks wheter two objects are currently colliding
-     * @param {Object} o1 first object
-     * @param {Object} o2 second object
+     * @param {object} o1 first object
+     * @param {object} o2 second object
      * @return {boolean} are the two objects colliding?
      */
     areObjectsColliding(o1, o2) {
