@@ -9,7 +9,8 @@
     "build": "rollup --config rollup.config.js",
     "test-all": "mocha test/EndToEnd/",
     "test-serializer": "mocha ./test/serializer/",
-    "test": "mocha ./test/serializer/ --compilers js:@babel/register"
+    "test": "mocha ./test/serializer/ --compilers js:@babel/register",
+    "types": "jsdoc -c types/jsdoc_server.conf.json"
   },
   "keywords": [
     "pixijs",
