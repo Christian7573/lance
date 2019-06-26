@@ -17,7 +17,7 @@
  * call removeObject() and addObject() sequentially, outside of the
  * normal update cycle of HSHG.
  *
- * @return  void   desc
+ * 
  */
 function update_RECOMPUTE() {
 

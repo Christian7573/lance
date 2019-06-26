@@ -1,3 +1,4 @@
+/** A component that can be attached to a gameobject */
 export default class GameComponent {
     
     constructor(){
