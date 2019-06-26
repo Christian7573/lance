@@ -4,7 +4,7 @@ import PixiRenderableComponent from './PixiRenderableComponent';
 /**
  * Pixi Renderer
  */
-export default class PixiRenderer extends Renderer {
+class PixiRenderer extends Renderer {
 
     /**
      * Returns a dictionary of image assets and their paths
@@ -116,3 +116,5 @@ export default class PixiRenderer extends Renderer {
     }
 
 }
+
+export { PixiRenderer as default };

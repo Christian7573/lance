@@ -1,6 +1,9 @@
 import Utils from './../lib/Utils';
 import BaseTypes from './BaseTypes';
 
+/**
+ * A class that can be serialized and deserialized
+ */
 class Serializable {
     /**
      *  Class can be serialized using either:
