@@ -1,5 +1,5 @@
 /** A component that can be attached to a gameobject */
-export default class GameComponent {
+class GameComponent {
     
     constructor(){
         /**
@@ -17,3 +17,5 @@ export default class GameComponent {
         return null;
     }
 }
+
+export { GameComponent as default }

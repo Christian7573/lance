@@ -1,4 +1,4 @@
 {
-    "include": ["types"],
+    "include": ["types-old"],
     "compilerOptions": { "target": "es6" }
 }

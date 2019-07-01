@@ -9,7 +9,7 @@ export default class PixiRenderableComponent extends GameComponent {
 
     /**
      * Initial creation of the Pixi renderable
-     * @returns A pixi container/sprite
+     * @returns {PIXI.Sprite} A pixi container/sprite
      */
     createRenderable() {
         let sprite;
