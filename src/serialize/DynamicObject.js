@@ -187,7 +187,7 @@ class DynamicObject extends GameObject {
      * and angle.  In each case, you can specify a min value, max
      * value, and a percent value.  { @see GameObject.bending }
      *
-     * @return {Object} bending - an object with bending paramters
+     * @return {object} bending - an object with bending paramters
      */
     get bending() {
         return {
