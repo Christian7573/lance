@@ -36,7 +36,7 @@ class ClientEngine {
       * @param {Number} inputOptions.healthCheckRTTSample - health check RTT calculation sample size. Default is 10.
       * @param {String} inputOptions.scheduler - When set to "render-schedule" the game step scheduling is controlled by the renderer and step time is variable.  When set to "fixed" the game step is run independently with a fixed step time. Default is "render-schedule".
       * @param {Object} inputOptions.syncOptions - an object describing the synchronization method. If not set, will be set to extrapolate, with local object bending set to 0.0 and remote object bending set to 0.6. If the query-string parameter "sync" is defined, then that value is passed to this object's sync attribute.
-      * @param {String} inputOptions.syncOptions.sync - chosen sync option, can be "interpolate", "extrapolate", or "frameSync"
+      * @param {"interpolate" | "extrapolate" | "frameSync"} inputOptions.syncOptions.sync - chosen sync option, can be "interpolate", "extrapolate", or "frameSync"
       * @param {Number} inputOptions.syncOptions.localObjBending - amount (0 to 1.0) of bending towards original client position, after each sync, for local objects
       * @param {Number} inputOptions.syncOptions.remoteObjBending - amount (0 to 1.0) of bending towards original client position, after each sync, for remote objects
       * @param {String} inputOptions.serverURL - Socket server url
@@ -111,9 +111,11 @@ class ClientEngine {
      * Makes a connection to the game server.  Extend this method if you want to add additional
      * logic on every connection. Call the super-class connect first, and return a promise which
      * executes when the super-class promise completes.
+     * Resolved when the connection is made to the server
      *
-     * @param {Object} [options] additional socket.io options
-     * @return {Promise} Resolved when the connection is made to the server
+     * @async
+     * @param {SocketIOClient.ConnectOpts} [options] additional socket.io options
+     * @return {Promise<void>}
      */
     connect(options = {}) {
 
@@ -164,7 +166,8 @@ class ClientEngine {
     /**
      * Start the client engine, setting up the game loop, rendering loop and renderer.
      *
-     * @return {Promise} Resolves once the Renderer has been initialized, and the game is
+     * @async
+     * @return {Promise<void>} Resolves once the Renderer has been initialized, and the game is
      * ready to connect
      */
     start() {
