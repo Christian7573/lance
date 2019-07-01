@@ -119,7 +119,8 @@ class GameEngine {
         * The worldSettings defines the game world constants, such
         * as width, height, depth, etc. such that all other classes
         * can reference these values.
-        * @member {Object} worldSettings
+        * @member {object} worldSettings
+        * @instance
         * @memberof GameEngine
         */
         this.worldSettings = Object.assign({}, worldSettings);
