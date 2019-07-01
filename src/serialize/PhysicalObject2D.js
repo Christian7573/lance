@@ -103,12 +103,13 @@ class PhysicalObject2D extends GameObject {
     }
 
     /**
+     * Bending - an object with bending paramters
      * Each object class can define its own bending overrides.
      * return an object which can include attributes: position, velocity,
      * angle, and angularVelocity.  In each case, you can specify a min value, max
      * value, and a percent value.
      *
-     * @return {object} bending - an object with bending paramters
+     * @type {object}
      */
     get bending() {
         return {

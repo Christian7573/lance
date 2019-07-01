@@ -182,12 +182,13 @@ class DynamicObject extends GameObject {
     }
 
     /**
+     * Bending - an object with bending paramters
      * Each object class can define its own bending overrides.
      * return an object which can include attributes: position, velocity,
      * and angle.  In each case, you can specify a min value, max
      * value, and a percent value.  { @see GameObject.bending }
      *
-     * @return {object} bending - an object with bending paramters
+     * @type {object}
      */
     get bending() {
         return {
