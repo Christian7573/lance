@@ -145,6 +145,11 @@ class Serializer {
                     localBufferOffset += this.getTypeByteSize(netSchemProp.itemType);
                 }
             }
+        } else if (netSchemeProp.type === BaseTypes.TYPES.NULLABLEINSTANCE) {
+            if (value === null) {
+                dataView.setUint8(bufferOffset, 1);
+                this.writeDataView(dataView, value, bufferOffset + 1, { type: BaseTypes.TYPES.CLASSINSTANCE });
+            } else { dataView.setUint8(bufferOffset, 0) }
         } else if (this.customTypes[netSchemProp.type]) {
             // this is a custom data property which needs to define its own write method
             this.customTypes[netSchemProp.type].writeDataView(dataView, value, bufferOffset);
@@ -204,6 +209,11 @@ class Serializer {
 
             data = items;
             bufferSize = localBufferOffset;
+        } else if (netSchemeProp.type === BaseTypes.TYPES.NULLABLEINSTANCE) {
+            if (dataView.getUint8(bufferOffset)  !== 0) {
+                const read_result = this.readDataView(dataView, bufferOffset + 1, { type: BaseTypes.TYPES.CLASSINSTANCE });
+                data = read_result.data; bufferSize = read_result.bufferSize + 1;
+            } else { data = null; bufferSize = 1 }
         } else if (this.customTypes[netSchemProp.type] != null) {
             // this is a custom data property which needs to define its own read method
             data = this.customTypes[netSchemProp.type].readDataView(dataView, bufferOffset);

@@ -86,7 +86,14 @@ BaseTypes.TYPES = {
      * @alias TYPES.LIST
      * @memberof! BaseTypes#
      */
-    LIST: 'LIST'
+    LIST: 'LIST',
+
+    /**
+     * Serializable class that could also be null. Make sure  you registered the classes included in this way.
+     * @alias TYPES.NULLABLEINSTANCE
+     * @memberof! BasTypes#
+     */
+    NULLABLEINSTANCE: 'NULLABLEINSTANCE'
 };
 
 export default BaseTypes;
